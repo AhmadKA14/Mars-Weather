@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Weather</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <!-- current date -->
+        <div class="date">
+            <h1 class="date-sol">sol <span data-current-sol></span></h1>
+            <h2 class="date-day" data-current-date></h2>
+        </div>
+
+        <div class="divider1"></div>
+
+        <!-- temperature list -->
+        <div class="templist">
+            <h1>temperature</h1>
+            <p>average: <span data-current-temp-average></span><span data-temp-unit></span></p>
+            <p>high: <span data-current-temp-high></span><span data-temp-unit></span></p>
+            <p>low: <span data-current-temp-low></span><span data-temp-unit></span></p>
+
+            <div class="divider2"></div>
+
+            <!-- wind info -->
+            <div class="wind">
+                <h1>wind</h1>
+                <div class="wind__direction">
+                    <div class="wind__arrow" data-wind-direction-arrow></div>
+                </div>
+                <p>
+                    <span data-wind-speed></span>
+                    <span data-speed-unit></span>
+                </p>
+            </div>
+
+            <!-- units -->
+            <div class="unit">
+                <label for="cel">°C</label>
+                <input type="radio" id="cel" name="unit" checked>
+                <button class="unit__toggle" data-unit-toggle></button>
+                <label for="fah">°F</label>
+                <input type="radio" id="fah" name="unit">
+            </div>
+        </div>
+    </main>
+
+    <!-- previous forcast -->
+    <div class="prev-forcast">
+        <h3 class="cast-header"> Previous 7 days forecast</h3>
+        <div class="prev-week" data-previous-sols></div>
+    </div>
+
+    <!-- previous sol template -->
+    <template data-previous-sol>
+        <div class="prev-day">
+            <h3 class="prev-day__sol">
+                sol
+                <span data-sol></span>
+            </h3>
+            <p class="prev-day__date" data-date>2</p>
+            <p class="prev-day__temp">
+                high:
+                <span data-temp-high></span><span data-temp-unit></span>
+            </p>
+            <p class="prev-day__temp">
+                low:
+                <span data-temp-low></span><span data-temp-unit></span>
+            </p>
+            <button class="prev-day__more-info" data-select-button>more info</button>
+        </div>
+    </template>
+
+    <!-- script -->
+    <script src="/app.js"></script>
+</body>
+
+</html>
